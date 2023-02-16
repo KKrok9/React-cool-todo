@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./Login.module.css";
 import { useState } from "react";
 const Login = (props) => {
-  const [loginModalState, setLoginModalState] = useState(false);
   
   return (
     <div className={styles["login-form-outer-div"]}>

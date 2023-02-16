@@ -8,7 +8,9 @@ const Navbar = (props) => {
         <button className={styles["nav-btn"]} onClick={props.onLoginClick}>
           Login
         </button>
-        <button className={styles["nav-btn"]}>Register</button>
+        <button className={styles["nav-btn"]} onClick={props.onRegisterClick}>
+          Register
+        </button>
       </nav>
     </div>
   );
