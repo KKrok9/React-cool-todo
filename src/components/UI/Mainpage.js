@@ -1,12 +1,24 @@
-import React from "react";
+import React  from "react";
+import { useState } from "react";
 import styles from "./Mainpage.module.css";
 import photo from "../../images/hard-work.jpg";
 import Navbar from "./Navbar";
-
+import Login from "../Login/Login";
 const Mainpage = () => {
+  const [loginModalState, setLoginModalState] = useState(false);
+  const openLoginModalHandler = () =>{
+    setLoginModalState(true)
+  }
+
+  const closeLoginModalHandler = () =>{
+    setLoginModalState(false)
+  }
+
   return (
     <div>
-      <Navbar></Navbar>
+      <Navbar onLoginClick = {openLoginModalHandler}></Navbar>
+      {loginModalState==true && <Login onCloseLoginClick = {closeLoginModalHandler}></Login>}
+
       <section className = {styles['section-mainContent']}>
       <div className = {styles['text-section']}>
       <h1>
