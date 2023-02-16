@@ -1,9 +1,15 @@
-import logo from "./logo.svg";
+import React from "react";
+
 import "./App.css";
 import Mainpage from "./components/UI/Mainpage.js"
 function App() {
+ 
+  const logInto = () =>{
+    localStorage.setItem('logged','true');
+  }
+
   return <div className="App">
-   <Mainpage></Mainpage>
+   {localStorage.getItem('logged')!=='true' && <Mainpage setLogin={logInto}></Mainpage>}
   </div>;
 }
 

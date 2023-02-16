@@ -5,7 +5,8 @@ import photo from "../../images/hard-work.jpg";
 import Navbar from "./Navbar";
 import Login from "../Login/Login";
 import Register from "../Register/Register";
-const Mainpage = () => {
+
+const Mainpage = (props) => {
   const [loginModalState, setLoginModalState] = useState(false);
   const [registerModalState, setRegisterModalState] = useState(false);
 
@@ -31,11 +32,11 @@ const Mainpage = () => {
         onLoginClick={openLoginModalHandler}
         onRegisterClick={openRegisterModalHandler}
       ></Navbar>
-      {registerModalState == true && (
+      {registerModalState === true && (
         <Register onCloseRegisterClick={closeRegisterModalHandler}></Register>
       )}
-      {loginModalState == true && (
-        <Login onCloseLoginClick={closeLoginModalHandler}></Login>
+      {loginModalState === true && (
+        <Login onCloseLoginClick={closeLoginModalHandler} setLogin = {props.setLogin}></Login>
       )}
 
       <section className={styles["section-mainContent"]}>

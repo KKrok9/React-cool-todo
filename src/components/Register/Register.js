@@ -1,7 +1,24 @@
 import React from "react";
+import { useState } from "react";
 import styles from "./Register.module.css";
 
 const Register = (props) => {
+  const [currentUserEmail, setCurrentUserEmail] = useState("");
+  const [currentUserPassword, setCurrentUserPassword] = useState("");
+
+  const addNewUser = () => {
+    console.log("added new user");
+    localStorage.setItem(currentUserEmail, currentUserPassword);
+    props.onCloseRegisterClick();
+  };
+
+  const userEmailHandler = (event) => {
+    setCurrentUserEmail(event.target.value);
+  };
+  const userPasswordHandler = (event) => {
+    setCurrentUserPassword(event.target.value);
+  };
+
   return (
     <div>
       <div className={styles["register-form-outer-div"]}>
@@ -17,16 +34,24 @@ const Register = (props) => {
             <label className={styles["label_register"]}>
               Enter your email:
             </label>
-            <input className={styles["input_register"]}></input>
+            <input
+              className={styles["input_register"]}
+              onChange={userEmailHandler}
+            ></input>
           </div>
 
           <div className={styles["input_and_label-div"]}>
             <label className={styles["label_register"]}>
               Enter your password:
             </label>
-            <input className={styles["input_register"]}></input>
+            <input
+              className={styles["input_register"]}
+              onChange={userPasswordHandler}
+            ></input>
           </div>
-          <button className={styles["register_submit"]}>Register</button>
+          <button className={styles["register_submit"]} onClick={addNewUser}>
+            Register
+          </button>
         </form>
         <div className={styles.overlay}></div>
       </div>
