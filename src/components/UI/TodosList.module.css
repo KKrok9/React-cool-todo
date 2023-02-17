@@ -1,0 +1,40 @@
+:root {
+  --main-gradient: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(94, 103, 194, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  background: var(--main-gradient);
+  
+}
+
+.container {
+  margin-left: 25%;
+  margin-top: 5%;
+  width:50vw;
+  height: 70vh;
+  border: solid 1px;
+  background: whitesmoke;
+  border : none;
+  border-radius: 12px;
+  overflow: scroll;
+}
+
