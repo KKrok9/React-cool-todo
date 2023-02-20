@@ -25,7 +25,6 @@ const Mainpage = (props) => {
   const closeRegisterModalHandler = () => {
     setRegisterModalState(false);
   };
-
   return (
     <div>
       <Navbar
@@ -36,7 +35,10 @@ const Mainpage = (props) => {
         <Register onCloseRegisterClick={closeRegisterModalHandler}></Register>
       )}
       {loginModalState === true && (
-        <Login onCloseLoginClick={closeLoginModalHandler} setLogin = {props.setLogin}></Login>
+        <Login
+          onCloseLoginClick={closeLoginModalHandler}
+          setLogin={props.setLogin}
+        ></Login>
       )}
 
       <section className={styles["section-mainContent"]}>

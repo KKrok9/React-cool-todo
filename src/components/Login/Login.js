@@ -13,9 +13,8 @@ const Login = (props) => {
       console.log("includes");
       //check if email exists
       if (localStorage.getItem(currentUserEmail) === currentUserPassword) {
-        console.log("loggedInto");
         props.setLogin();
-        console.log("fadsfadsfas");
+        localStorage.setItem("currentlyLoggedUser", currentUserEmail);
       }
     }
   };

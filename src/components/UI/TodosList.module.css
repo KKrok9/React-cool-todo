@@ -13,6 +13,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background:var(--main-gradient);
 }
 
 code {
@@ -22,19 +23,20 @@ code {
 body {
   height: 100vh;
   width: 100vw;
-  background: var(--main-gradient);
-  
 }
 
 .container {
   margin-left: 25%;
   margin-top: 5%;
-  width:50vw;
+  width: 50vw;
   height: 70vh;
   border: solid 1px;
   background: whitesmoke;
-  border : none;
+  border: none;
   border-radius: 12px;
   overflow: scroll;
 }
 
+.logout-btn{
+  margin-left: 50%;
+}
