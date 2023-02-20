@@ -19,6 +19,14 @@ const Register = (props) => {
     setCurrentUserPassword(event.target.value);
   };
 
+  const checkIfContainsAt = (value) => {
+    if (!value.includes("@")) {
+      return "Enter valid e-mail";
+    } else {
+      return true;
+    }
+  };
+
   return (
     <div>
       <div className={styles["register-form-outer-div"]}>
